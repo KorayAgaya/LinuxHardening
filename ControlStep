@@ -294,4 +294,44 @@ Linux İşletim Sistemi Kontrol Adımları
 										
 		Backup'lardan Geri Dönüş Yapıldımı								
 										
-		Yedekleri farklı lokasyonlara taşınıyor mu								
+		Yedekleri farklı lokasyonlara taşınıyor mu
+
+15.	Disable and blacklist Linux modules	
+
+   	Debian – Redhat Kontrolleri
+   		
+   		find /lib/modules/`uname -r` -name *firewire*
+   		
+   		File Path : /etc/modprobe.d/blacklist-firewire.conf
+   		
+   	See blacklisted modules
+   	  
+   	        modprobe --showconfig | grep blacklist
+   	        
+   	See disabled models
+   	
+   		modprobe --showconfig | grep "^install" | grep "/bin"
+   		
+        Other Commands
+        ================
+        
+        Blacklisted and disabled modules
+               
+		modprobe –showconfig | egrep “^(blacklist|install)”
+		
+	Find modules
+		
+		find /lib/modules/`uname -r -print
+		
+	Load module
+		
+		modprobe module
+		
+	Unload module
+	
+		modprobe -r module
+		
+	Module details
+	
+		modinfo module
+   	
