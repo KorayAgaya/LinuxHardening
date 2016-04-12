@@ -6,8 +6,8 @@ Linux İşletim Sistemi Kontrol Adımları
 	
 		Sistem Açılış Kontrolleri ve Yetki Seviyesi								
 										
-		ls -alh /etc/default/grub			600		echo $PATH ( Program Yolları kontrolleri ve Versiyon Kontrolleri )			
-		cat /etc/default/grub					( Run Level Komut Satırındanmı Açılıyormu )  id:3:initdefault			
+		ls -alh /etc/default/grub	600		echo $PATH ( Program Yolları kontrolleri ve Versiyon Kontrolleri )			
+		cat /etc/default/grub				( Run Level Komut Satırındanmı Açılıyormu )  id:3:initdefault			
 										
 2.	Kurulum Sonrası Disk Yapılandırma Ayarları	
 
@@ -15,7 +15,7 @@ Linux İşletim Sistemi Kontrol Adımları
 										
 		Disk Bölümlendirme ve Doluluk Alanları Kontrolleri							Secure Temp Ayarlanmışmı	
 										
-		lsblk ( log, home, audit ) ayrımı							cat /etc/fstab altında	
+		lsblk ( log, home, audit ) ayrımı			cat /etc/fstab altında	
 		df -h							/tmp loop,nosuid,noexec,rw 0 0	
 		fdisk -l								
 		cat /etc/fstab								
@@ -28,9 +28,9 @@ Linux İşletim Sistemi Kontrol Adımları
 
 	  Redhat Kontrolleri								Debian Kontrolleri	
 										
-		Redhat - Güncelleme Sunucularına Bağlanma Kontrolleri							Debian Paket Güncelme Adresleri	
+		Redhat - Güncelleme Sunucularına Bağlanma Kontrolleri		        Debian Paket Güncelme Adresleri	
 										
-		subscription-manager version							cat /etc/apt/sources.list	
+		subscription-manager version						cat /etc/apt/sources.list	
 										
 4.	Gereksiz Servis Yapılandırma Ayarları
 
@@ -38,7 +38,7 @@ Linux İşletim Sistemi Kontrol Adımları
 										
 		Çalışan Servislerin Kontrolleri						Fazla Olan Terminal Erişimleri Kapılımı		
 										
-		chkconfig --list						cat /etc/securetty   ( tty1 #tty2 #tty3 )		
+		chkconfig --list						        cat /etc/securetty   ( tty1 #tty2 #tty3 )		
 		systemctl list-unit-files --type service								
 		systemctl list-unit-files --type service --all								
 										
@@ -47,12 +47,12 @@ Linux İşletim Sistemi Kontrol Adımları
 		
 		rlogin			haldaemon
 		netstat –nltp					lpd ( printer deamon )			postfix
-		netstat -pn -l -A inet					cups ( printer deamon )			avahi ( Network manager Service )
-		lsof -i | grep LISTEN					bluetooth , hidd			sendmail ( Yerine postfix kullanılabilir )
-		ps aux					gpm ( mouse pointer )			
-							portmap			
+		netstat -pn -l -A inet				cups ( printer deamon )			avahi ( Network manager Service )
+		lsof -i | grep LISTEN				bluetooth , hidd			sendmail ( Yerine postfix kullanılabilir )
+		ps aux					        gpm ( mouse pointer )			
+							        portmap			
 		openssl version -v								
-		openssl version -b					Apache servisinde mod_security aktif mi ? ( SQL Injection )			
+		openssl version -b			Apache servisinde mod_security aktif mi ? ( SQL Injection )			
 							apachectl -M |grep --color security     --  /etc/httpd/modsecurity			
 							find  / -name mod_security   --- SecRuleEngine  On olacak
 							
