@@ -13,7 +13,7 @@ Linux İşletim Sistemi Kontrol Adımları
 
 	  Debian – Redhat Kontrolleri									
 										
-		Disk Bölümlendirme ve Doluluk Alanları Kontrolleri							Secure Temp Ayarlanmışmı	
+		Disk Bölümlendirme ve Doluluk Alanları Kontrolleri	Secure Temp Ayarlanmışmı	
 										
 		lsblk ( log, home, audit ) ayrımı			cat /etc/fstab altında	
 		df -h							/tmp loop,nosuid,noexec,rw 0 0	
